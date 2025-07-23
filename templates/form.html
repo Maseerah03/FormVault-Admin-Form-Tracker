@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FormVault - Admin Request Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <script src="/static/js/validate.js" defer></script>
+</head>
+<body>
+  <!-- 🔵 Navigation -->
+  <nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">FormVault</a>
+    </div>
+  </nav>
+
+  <!-- 🟢 Main Form Container -->
+  <div class="container">
+    <h2 class="mb-4">Submit Internal Request</h2>
+
+    <form id="adminForm" method="POST" action="/submit">
+      <div class="mb-3">
+        <label for="fullname" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="fullname" name="fullname" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <select class="form-select" id="department" name="department" required>
+          <option value="">-- Select Department --</option>
+          <option>HR</option>
+          <option>Finance</option>
+          <option>IT</option>
+          <option>Marketing</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="requestType" class="form-label">Request Type</label>
+        <select class="form-select" id="requestType" name="requestType" required>
+          <option value="">-- Select Request Type --</option>
+          <option>Work from Home</option>
+          <option>Travel Reimbursement</option>
+          <option>Leave Request</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="reason" class="form-label">Reason / Description</label>
+        <textarea class="form-control" id="reason" name="reason" rows="4" required></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Preferred Date</label>
+        <input type="date" class="form-control" id="date" name="date" required />
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit Request</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
